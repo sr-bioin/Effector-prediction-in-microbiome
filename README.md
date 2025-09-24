@@ -5,18 +5,18 @@ Sec-dependent effectors, protein sequences were screened for Sec signal peptides
 ##### Command used for SignalP3: </br>
     signalp -t gram- -f short -u 0.44 /Whole_genome_analysis/Clavibacter/$sample.fasta > / Whole_genome_analysis/Clavibacter/INTERPROSCAN/Signalp4.1/$sample_signP4_OPR.out
 
-##### Command used for SignalP4: https://services.healthtech.dtu.dk/services/SignalP-4.1/
+##### Command used for SignalP4: 
     interproscan.sh -f TSV -appl SignalP-GRAM_NEGATIVE -i /Whole_genome_analysis/Clavibacter/Proteins/$sample.fasta -b /Whole_genome_analysis/Clavibacter/INTERPROSCAN/Signalp4.1/$sample.iprscan.signalp_4
 
 #### Phobious:- Phobius is a program for prediction of transmembrane topology and signal peptides from the amino acid sequence of a protein. https://phobius.sbc.su.se/
-Command used for Phobius:
+##### Command used for Phobius:
     interproscan.sh -f TSV -appl Phobius -i /Whole_genome_analysis/Clavibacter/Proteins/$sample.fasta -b /Whole_genome_analysis/Clavibacter/INTERPROSCAN/Phobius/$sample.phobius
 
 #### Lipop: It produces predictions of lipoproteins and discriminates between lipoprotein signal peptides, other signal peptides and n-terminal membrane helices in Gram-negative bacteria. https://services.healthtech.dtu.dk/services/LipoP-1.0/
-#### Command used for lipoP: 
+##### Command used for lipoP: 
     perl LipoP -short -html /Whole_genome_analysis/Proteins/$sample.faa > $sample_.lipoP
 
-DeepTMHMM is a deep learning protein language model-based algorithm that can detect and predict the topology of both alpha helical and beta barrels proteins over all domains of life. https://services.healthtech.dtu.dk/services/DeepTMHMM-1.0/ 
+#### DeepTMHMM is a deep learning protein language model-based algorithm that can detect and predict the topology of both alpha helical and beta barrels proteins over all domains of life. https://services.healthtech.dtu.dk/services/DeepTMHMM-1.0/ 
 ##### Command used for deepTMHMM:
      interproscan.sh -f TSV -appl TMHMM -i /Whole_genome_analysis/Clavibacter/Proteins/compliantFasta/$sample.fasta -b /Whole_genome_analysis/Clavibacter/INTERPROSCAN/TMHMM/$sample.TMHMM
 
