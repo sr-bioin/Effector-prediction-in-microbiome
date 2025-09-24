@@ -1,23 +1,25 @@
-Bioinformatics analysis
+## Effector predicton
 
-Sec-dependent effectors, protein sequences were screened for Sec signal peptides. Proteins possessing signal pep-tides for the Sec-dependent pathway were identified using Signalv. 3.0, SignalP v. 4.0, and Phobius v. 1.01 (Bendsten et al., 2004; Kall et al., 2004; 2007; Petersen et al., 2011). 
-
-#### Command used for SignalP3:  
+Sec-dependent effectors, protein sequences were screened for Sec signal peptides. Proteins possessing signal pep-tides for the Sec-dependent pathway were identified using following softwares. 
+SignalP : SignalP predicts the presence and location of signal peptide cleavage sites in amino acid sequences from different organisms: Gram-positive prokaryotes, Gram-negative prokaryotes, and eukaryotes. The method incorporates a prediction of cleavage sites and a signal peptide/non-signal peptide prediction based on a combination of several artificial neural networks and hidden Markov models.
+#### Command used for SignalP3: https://services.healthtech.dtu.dk/services/SignalP-3.0/ 
     signalp -t gram- -f short -u 0.44 /Whole_genome_analysis/Clavibacter/$sample.fasta > / Whole_genome_analysis/Clavibacter/INTERPROSCAN/Signalp4.1/$sample_signP4_OPR.out
 
-#### Command used for SignalP4:
+#### Command used for SignalP4: https://services.healthtech.dtu.dk/services/SignalP-4.1/
     interproscan.sh -f TSV -appl SignalP-GRAM_NEGATIVE -i /Whole_genome_analysis/Clavibacter/Proteins/$sample.fasta -b /Whole_genome_analysis/Clavibacter/INTERPROSCAN/Signalp4.1/$sample.iprscan.signalp_4
 
+Phobious:- Phobius is a program for prediction of transmembrane topology and signal peptides from the amino acid sequence of a protein. https://phobius.sbc.su.se/
 #### Command used for Phobius:
     interproscan.sh -f TSV -appl Phobius -i /Whole_genome_analysis/Clavibacter/Proteins/$sample.fasta -b /Whole_genome_analysis/Clavibacter/INTERPROSCAN/Phobius/$sample.phobius
 
 Predicted lipoproteins and transmembrane proteins were filtered from the Sec secretomes.
 
+Lipop: It produces predictions of lipoproteins and discriminates between lipoprotein signal peptides, other signal peptides and n-terminal membrane helices in Gram-negative bacteria. https://services.healthtech.dtu.dk/services/LipoP-1.0/
 #### Command used for lipoP: 
     perl LipoP -short -html /Whole_genome_analysis/Proteins/$sample.faa > $sample_.lipoP
 
-Transmembrane topology was predicted using TMHMM v. 2.0 (Sonnhammer et al., 1998). 
-#### Command used for TMHMM:
+DeepTMHMM is a deep learning protein language model-based algorithm that can detect and predict the topology of both alpha helical and beta barrels proteins over all domains of life. https://services.healthtech.dtu.dk/services/DeepTMHMM-1.0/ 
+#### Command used for deepTMHMM:
      interproscan.sh -f TSV -appl TMHMM -i /Whole_genome_analysis/Clavibacter/Proteins/compliantFasta/$sample.fasta -b /Whole_genome_analysis/Clavibacter/INTERPROSCAN/TMHMM/$sample.TMHMM
 
 
