@@ -1,6 +1,6 @@
 ## Effector predicton
 
-Sec-dependent effectors, protein sequences were screened for Sec signal peptides. Proteins possessing signal pep-tides for the Sec-dependent pathway were identified using following softwares. 
+Sec-dependent effectors, protein sequences were screened for Sec signal peptides. Proteins possessing signal pep-tides for the Sec-dependent pathway were identified using following softwares. </br>
 SignalP : SignalP predicts the presence and location of signal peptide cleavage sites in amino acid sequences from different organisms: Gram-positive prokaryotes, Gram-negative prokaryotes, and eukaryotes. The method incorporates a prediction of cleavage sites and a signal peptide/non-signal peptide prediction based on a combination of several artificial neural networks and hidden Markov models.
 #### Command used for SignalP3: https://services.healthtech.dtu.dk/services/SignalP-3.0/ 
     signalp -t gram- -f short -u 0.44 /Whole_genome_analysis/Clavibacter/$sample.fasta > / Whole_genome_analysis/Clavibacter/INTERPROSCAN/Signalp4.1/$sample_signP4_OPR.out
