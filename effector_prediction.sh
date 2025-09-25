@@ -5,7 +5,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --cpus-per-task=12
 #SBATCH --mem=64G
-#SBATCH --partition=compute   # change to your cluster partition/queue name
+#SBATCH --partition=compute   
 
 # ================================
 # Protein Analysis & Phylogeny Pipeline (SLURM)
@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-# Load modules if needed (example below, adjust for your HPC)
+# Load modules 
 # module load signalp/3.0
 # module load interproscan/5
 # module load orthofinder
@@ -24,7 +24,7 @@ set -euo pipefail
 # Input files
 PROTEIN_FASTA="/Proteins/sample.fasta"
 PROTEIN_FAA="/Proteins/sample.faa"
-DNA_FASTA="CLas.fasta"
+DNA_FASTA="ref.fasta"
 
 # Output directories
 OUT_DIR="/INTERPROSCAN"
