@@ -16,15 +16,15 @@
 ##### Command used for lipoP: 
     perl LipoP -short -html /Proteins/sample.faa > sample_.lipoP
 
-#### DeepTMHMM: It is a deep learning protein language model-based algorithm that can detect and predict the topology of both alpha helical and beta barrels proteins over all domains of life. https://services.healthtech.dtu.dk/services/DeepTMHMM-1.0/ 
-##### Command used for deepTMHMM:
+#### TMHMM: It is a deep learning protein language model-based algorithm that can detect and predict the topology of both alpha helical and beta barrels proteins over all domains of life.  
+##### Command used for TMHMM:
      interproscan.sh -f TSV -appl TMHMM -i /Proteins/sample.fasta -b INTERPROSCAN/TMHMM/sample.TMHMM
 
 ## Phylogenetic analyses
 Orthologous genes of Las isolates were predicted using the OrthoMCL v. 2.0 pipeline (Li et al., 2003). 
 
 ##### orthomcl clustering
-    was done using Orthofinder
+    used Orthofinder
     
 Multiple alignments of gene sequences were done with PRANK v. 170,427 (Löytynoja, 2014). 
 
